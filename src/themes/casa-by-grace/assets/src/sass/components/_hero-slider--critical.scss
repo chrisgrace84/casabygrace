@@ -1,0 +1,48 @@
+.hero-slider {
+  position: relative;
+  overflow: hidden;
+
+  &__images {
+
+    .swiper-wrapper {
+      display: flex;
+
+      .swiper-slide {
+        @include aspect-sized-image(1392 780);
+        flex-shrink: 0;
+        height: 50vh;
+
+        @include mq($from: m) {
+          height: 75vh;
+        }
+      }
+    }
+
+    &-pagination {
+      $size: 8px;
+      position: absolute;
+      width: 100%;
+      height: $size;
+      bottom: 30px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+
+      .swiper-pagination-bullet {
+        display: block;
+        width: $size;
+        height: $size;
+        border: 1px solid $color-white;
+        border-radius: 50%;
+        cursor: pointer;
+
+        &-active {
+          background: $color-white;
+        }
+      }
+    }
+  }
+}

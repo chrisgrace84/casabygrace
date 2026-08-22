@@ -1,0 +1,67 @@
+<?php
+
+namespace TGHP\CasaByGrace\Taxonomy;
+
+use TGHP\CasaByGrace\CasaByGrace;
+
+class ThingType extends AbstractTaxonomy
+{
+
+    /**
+     * Defined taxonomy as constant here so if can it can be accessed
+     * outside of this class without creating a new instantiation
+     */
+    const TAXONOMY_CODE = 'thing_type';
+
+    /**
+     * {@inheritDoc}
+     */
+    protected $taxonomyCode = self::TAXONOMY_CODE;
+
+    /**
+     * Defined associated post type as constant here so if can it can be accessed
+     * outside of this class without creating a new instantiation
+     */
+    const POST_TYPE_CODE = 'thing';
+
+    /**
+     * {@inheritDoc}
+     */
+    protected $postTypeCode = self::POST_TYPE_CODE;
+
+    /**
+     * {@inheritDoc}
+     */
+    public function define(): array
+    {
+        $singular = 'Thing Type';
+        $plural = 'Thing Types';
+
+        return [
+            'hierarchical' => true, // Set this to 'false' for non-hierarchical taxonomy (like tags)
+            'labels' => [
+                'name' => __($plural, CasaByGrace::getTextDomain()),
+                'singular_name' => __($singular, CasaByGrace::getTextDomain()),
+                'search_items' => __("Search {$plural}", CasaByGrace::getTextDomain()),
+                'all_items' => __("All {$plural}", CasaByGrace::getTextDomain()),
+                'parent_item' => __("Parent {$singular}", CasaByGrace::getTextDomain()),
+                'parent_item_colon' => __("Parent {$singular}:", CasaByGrace::getTextDomain()),
+                'edit_item' => __("Edit {$singular}", CasaByGrace::getTextDomain()),
+                'update_item' => __("Update {$singular}", CasaByGrace::getTextDomain()),
+                'add_new_item' => __("Add New {$singular}", CasaByGrace::getTextDomain()),
+                'new_item_name' => __("New {$singular} Name", CasaByGrace::getTextDomain()),
+                'menu_name' => __($plural, CasaByGrace::getTextDomain()),
+            ],
+            'show_ui' => true,
+            'show_admin_column' => true,
+            'query_var' => true,
+            'show_in_rest' => true,
+            'rewrite' => [
+              'slug' => strtolower(preg_replace('/\s/g', '-', $singular)),
+            ],
+//            'show_in_graphql' => true,
+//            'graphql_single_name' => preg_replace('/\s/g', '', $singular),
+//            'graphql_plural_name' => preg_replace('/\s/g', '', $singular),
+        ];
+    }
+}

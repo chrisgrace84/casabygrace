@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: $color__body;
+  overscroll-behavior: none;
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  &.nav-open {
+    overflow: hidden;
+  }
+}
+
+section {
+  scroll-margin-top: #{$header-height - 1px};
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}

@@ -1,0 +1,44 @@
+.text-with-image {
+  $self: &;
+  @include max-width-element;
+  @include main-padding;
+  display: grid;
+  gap: 30px;
+  padding-top: $spacing__ml;
+  padding-bottom: $spacing__ml;
+
+  @include mq($from: l) {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    padding-top: $spacing__l;
+    padding-bottom: $spacing__l;
+
+    &--image-left {
+      #{$self}__image {
+        order: 1;
+      }
+
+      #{$self}__text {
+        order: 2;
+      }
+    }
+  }
+
+  &--bg-grey {
+    @include full-bleed-background($color__light-grey);
+  }
+
+  &__text {
+    @include font__sizing(15px, 20px);
+  }
+
+  &__image {
+    @include mq($until: l) {
+      @include aspect-sized-element(6 3, 'img, iframe');
+    }
+
+    @include mq($from: l) {
+      @include aspect-sized-element(6 4, 'img, iframe');
+    }
+  }
+}

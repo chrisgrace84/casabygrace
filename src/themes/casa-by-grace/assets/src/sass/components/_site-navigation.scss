@@ -1,0 +1,59 @@
+.site-navigation {
+  @include main-padding;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: $color__pink;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(-100%);
+  transition: transform 0.35s ease;
+  z-index: 101;
+
+  body.nav-open & {
+    transform: translateY(0%);
+  }
+
+  @include mq($from: m) {
+    display: none;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: $header-height;
+  }
+
+  &__logo  {
+    svg path {
+      fill: $color-white;
+    }
+  }
+
+  &__menu {
+    list-style: none;
+    margin-top: auto;
+    margin-bottom: auto;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing__s;
+    padding-bottom: $spacing__xl;
+
+    li {
+      @include font-style__nav;
+
+      a {
+        color: $color-white;
+        display: block;
+      }
+    }
+  }
+
+  &__toggle {
+    display: flex;
+    cursor: pointer;
+  }
+}

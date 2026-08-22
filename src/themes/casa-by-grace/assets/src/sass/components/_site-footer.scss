@@ -1,0 +1,57 @@
+.site-footer {
+  @include max-width-element;
+  @include main-padding;
+  @include full-bleed-background($color__charcoal);
+  @include font__sizing(14px, 18px);
+  color: $color-white;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 40px;
+  padding-top: $spacing__xs;
+  padding-bottom: $spacing__xs;
+
+  @include mq($from: s) {
+    flex-wrap: wrap;
+  }
+
+  @include mq($from: m) {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  &__contacts {
+    display: flex;
+    gap: 25px;
+    margin-right: auto;
+  }
+
+  &__contact {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+  }
+
+  &__nav {
+    &-menu {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing__xs;
+
+      @include mq($from: s) {
+        flex-direction: row;
+        gap: $spacing__m;
+      }
+
+      a {
+        text-decoration: underline;
+        text-underline-offset: 2px;
+
+        &:hover {
+          color: $color__orange
+        }
+      }
+    }
+  }
+}

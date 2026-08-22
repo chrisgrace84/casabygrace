@@ -1,0 +1,51 @@
+{
+    "name": "tghp/casa-by-grace-project",
+    "type": "project",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packagist.org"
+        },
+        {
+            "type": "composer",
+            "url": "https://wpackagist.org"
+        },
+        {
+            "type": "composer",
+            "url": "https://packages.metabox.io/0f8f7fc3bd035b4a4f17b480eaf0434b"
+        }
+    ],
+    "require": {
+        "johnpbloch/wordpress": "^7",
+        "tghp/wp-composer-clean": "^2.1",
+        "vlucas/phpdotenv": "^5",
+        "wpackagist-plugin/meta-box": "^5",
+        "wpackagist-plugin/wordfence": "^7",
+        "wpackagist-plugin/sar-friendly-smtp": "^1",
+        "wpackagist-plugin/svg-support": "^2.3",
+        "monolog/monolog": "^2",
+        "wpackagist-plugin/official-facebook-pixel": "^4.1"
+    },
+    "config": {
+        "vendor-dir": "wp-content/vendor",
+        "allow-plugins": {
+            "johnpbloch/wordpress-core-installer": true,
+            "composer/installers": true,
+            "tghp/wp-composer-clean": true
+        }
+    },
+    "extra": {
+        "wordpress-install-dir": "wp",
+        "installer-paths": {
+            "wp-content/plugins/{$name}/": [
+                "type:wordpress-plugin"
+            ],
+            "wp-content/mu-plugins/": [
+                "type:wordpress-muplugin"
+            ],
+            "wp-content/themes/{$name}/": [
+                "type:wordpress-theme"
+            ]
+        }
+    }
+}

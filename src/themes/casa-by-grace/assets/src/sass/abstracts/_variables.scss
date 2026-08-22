@@ -1,0 +1,56 @@
+// MQ
+$size__xxs: 400px;
+$size__xs: 460px;
+$size__s: 660px;
+$size__m: 720px;
+$size__l: 980px;
+$size__xl: 1124px;
+$size__xxl: 1200px;
+$size__xxxl: 1440px;
+$size__max-width: $size__xxxl;
+
+$mq-breakpoints: (
+  xxs: $size__xxs,
+  xs: $size__xs,
+  s: $size__s,
+  m: $size__m,
+  l: $size__l,
+  xl: $size__xl,
+  xxl: $size__xxl,
+  xxxl: $size__xxxl,
+  max: $size__max-width,
+);
+
+// Colors
+$color__orange: #CC5500;
+$color__pink: #EBC2CB;
+$color__charcoal: #3B3B3B;
+$color__charcoal-10: rgba($color__charcoal, 10%);
+$color__charcoal-20: rgba($color__charcoal, 20%);
+$color__charcoal-50: rgba($color__charcoal, 50%);
+$color__light-grey: #F8F8F8;
+$color-white: #FFFFFF;
+$color-black: #000000;
+$color__body: $color__charcoal;
+
+// Spacing
+$size__main-padding: 40px;
+$spacing__xxl: 120px;
+$spacing__xl: 80px;
+$spacing__l: 60px;
+$spacing__ml: 40px;
+$spacing__m: 30px;
+$spacing__s: 20px;
+$spacing__xs: 10px;
+$spacing__xxs: 5px;
+
+// Other sizes
+$header-height: 78px;
+
+// Paths
+$path__image: '../images';
+$path__font: '../fonts';
+
+// Font
+$font__base-size: 16px;
+$font__body-family: 'Playfair', sans-serif;

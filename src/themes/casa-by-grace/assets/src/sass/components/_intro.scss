@@ -1,0 +1,40 @@
+.intro {
+  @include max-width-element;
+  @include main-padding;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
+  display: grid;
+  justify-content: center;
+  gap: $spacing__s;
+
+  &__key-points {
+    @include font__sizing(18px, 22px);
+    max-width: 720px;
+    margin: auto;
+  }
+
+  &__button {
+    justify-content: center;
+    border: 1px solid #e8e8e8;
+    background: #F8F8F8;
+    padding: 20px;
+    margin: auto;
+
+    &.guesty-root-element {
+      width: max-content;
+
+      .guesty-widget__item {
+        margin-right: 15px;
+      }
+
+      #guesty-search-widget__datepicker {
+        gap: 15px;
+
+        [id^=date-picker-wrapper] input {
+          border-color: #ccc;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+.site-header {
+  @include max-width-element;
+  @include main-padding;
+  @include full-bleed-background($color-white);
+  width: 100%;
+  height: $header-height;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  position: sticky;
+  top: 0;
+  border-bottom: 1px solid $color__charcoal-10;
+
+  &__logo {
+    svg {
+      display: block;
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @include mq($from: m) {
+      display: block;
+    }
+
+    &-menu {
+      display: flex;
+      gap: 28px;
+
+      li {
+        @include font-style__menu;
+
+        a {
+          color: $color__charcoal;
+
+          &:hover {
+            color: $color__orange;
+          }
+        }
+      }
+    }
+  }
+
+  &__toggle {
+    display: flex;
+    cursor: pointer;
+
+    @include mq($from: m) {
+      display: none;
+    }
+  }
+}

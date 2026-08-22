@@ -1,0 +1,9 @@
+{
+  "extends": "./node_modules/@tghp/vitepress/tsconfig.json",
+  "compilerOptions": {},
+  "include": [
+    "./src/**/*",
+    "./vite.config.mts",
+    "./*.d.ts",
+  ]
+}

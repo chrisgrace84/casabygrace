@@ -1,0 +1,89 @@
+@use "sass:math";
+
+@mixin font__body {
+  font-family: $font__body-family;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 400;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+@mixin font__sizing($font-size-px, $line-height-px) {
+  $font-size: math.div($font-size-px, $font__base-size);
+  font-size: $font-size * 1rem;
+  $line-height: math.div($line-height-px, $font-size-px);
+  line-height: $line-height;
+}
+
+@mixin font-style__standard {
+  @include font__body;
+  @include font__sizing(16px, 24px);
+}
+
+@mixin font-style__small {
+  @include font__sizing(12px, 18px);
+}
+
+@mixin font-style__menu {
+  @include mq($until: l) {
+    @include font__sizing(14px, 20px);
+  }
+
+  @include mq($from: l) {
+    @include font__sizing(16px, 24px);
+  }
+}
+
+@mixin font-style__nav {
+  @include font__sizing(26px, 31.2px);
+  font-weight: 300;
+}
+
+@mixin font-style__featured {
+  @include mq($until: l) {
+    @include font__sizing(16px, 24px);
+  }
+
+  @include mq($from: l) {
+    @include font__sizing(22px, 28.6px);
+  }
+}
+
+@mixin font-style__h1 {
+  font-weight: 600;
+
+  @include mq($until: l) {
+    @include font__sizing(26px, 31.2px);
+  }
+
+  @include mq($from: l) {
+    @include font__sizing(40px, 48px);
+  }
+}
+
+@mixin font-style__h2 {
+  font-weight: 600;
+
+  @include mq($until: l) {
+    @include font__sizing(20px, 24px);
+  }
+
+  @include mq($from: l) {
+    @include font__sizing(26px, 31.2px);
+  }
+}
+
+@mixin font-style__h3 {
+  @include font__sizing(18px, 21.6px);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 3.6px;
+}
+
+@mixin font-style__h4 {
+  @include font__sizing(12px, 14.4px);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2.4px;
+}

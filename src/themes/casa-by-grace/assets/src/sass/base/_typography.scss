@@ -1,0 +1,57 @@
+body {
+  @include font-style__standard;
+}
+
+h1 {
+  @include font-style__h1;
+}
+
+h2 {
+  @include font-style__h2;
+  color: $color__orange;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+h3 {
+  @include font-style__h3;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+h4 {
+  @include font-style__h4;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.site-main {
+  p, li {
+    margin-bottom: 1em;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0.4em;
+
+    > li {
+      position: relative;
+      padding-left: 0.7em;
+
+      &:before {
+        content: '•';
+        font-size: 1.2em;
+        position: absolute;
+        top: -3px;
+        left: -5px;
+      }
+    }
+  }
+}
+

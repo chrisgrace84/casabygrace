@@ -1,0 +1,9 @@
+wp/*
+wp-content/*
+src/themes/**/dist/**/*
+!src/plugins/*/vendor/
+!.gitkeep
+.env
+.idea/
+node_modules
+.DS_Store

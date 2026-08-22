@@ -1,0 +1,42 @@
+.page-default {
+  @include max-width-element;
+  @include main-padding;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  h1 {
+    margin-bottom: $spacing__ml;
+  }
+
+  &__body {
+    display: grid;
+    gap: $spacing__ml;
+
+    @include mq($from: s) {
+      grid-template-columns: 6fr 4fr;
+    }
+  }
+
+  &__meet {
+    display: grid;
+    gap: $spacing__m;
+
+    p {
+      display: flex;
+      justify-content: space-between;
+      gap: $spacing__xs;
+      margin: 0;
+    }
+  }
+
+  &__image {
+    @include mq($until: s) {
+      order: 2;
+    }
+  }
+
+  &__info {
+    @include font__sizing(18px, 22px);
+    font-weight: 600;
+  }
+}
