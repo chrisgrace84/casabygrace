@@ -1,10 +1,21 @@
 @use "sass:math";
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 @mixin font__body {
   font-family: $font__body-family;
   font-optical-sizing: auto;
   font-style: normal;
   font-weight: 400;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+@mixin font__button {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
   font-variation-settings:
     "wdth" 100;
 }

@@ -52,6 +52,19 @@
     }
   }
 
+  &__button {
+    @include button;
+    padding: 12px 20px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: calc(100% - 40px);
+    text-align: center;
+    background: transparent;
+    border: 1px solid $color-white;
+    margin: auto;
+  }
+
   &__toggle {
     display: flex;
     cursor: pointer;

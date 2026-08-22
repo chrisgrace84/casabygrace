@@ -19,9 +19,11 @@
                 <h3 class="intro__subtitle">
                     <?= __('A Luxury 4 bedroom Holiday Home in Royal Windsor, Berkshire'); ?>
                 </h3>
-                <a class="intro__button" href="https://www.casabygrace.com/en/properties/6a7e245aeacc1600b2e4c78f?minOccupancy=1&adults=1" target="_blank">
-                    <?= __('Book now') ?>
-                </a>
+                <?php
+                get_template_part('template-parts/cta-button', null, [
+                    'button_class' => 'intro__button'
+                ])
+                ?>
             </section>
 
             <section class="text-with-image text-with-image--image-left text-with-image--bg-grey" id="about-us">

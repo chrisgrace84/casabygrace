@@ -15,9 +15,11 @@
     <nav class="site-navigation">
         <div class="site-navigation__header">
             <div class="site-navigation__logo">
-                <?php get_template_part('template-parts/site-logo', null, [
+                <?php
+                get_template_part('template-parts/site-logo', null, [
                     'logo_class' => 'site-navigation__logo'
-                ]) ?>
+                ])
+                ?>
             </div>
             <div class="site-navigation__toggle">
                 <?= TGHPSite()->asset->outputAsset('images/icon-menu-close.svg') ?>
@@ -32,12 +34,20 @@
             'depth' => 1,
         ]);
         ?>
+
+        <?php
+        get_template_part('template-parts/cta-button', null, [
+            'button_class' => 'site-navigation__button'
+        ])
+        ?>
     </nav>
 
     <header class="site-header" data-gw-main-init='{ "site-header": {} }'>
-        <?php get_template_part('template-parts/site-logo', null, [
+        <?php
+        get_template_part('template-parts/site-logo', null, [
             'logo_class' => 'site-header__logo'
-        ]) ?>
+        ])
+        ?>
 
         <nav class="site-header__nav">
             <?php
@@ -47,6 +57,12 @@
                 'menu_class' => 'site-header__nav-menu',
                 'depth' => 1,
             ]);
+            ?>
+
+            <?php
+            get_template_part('template-parts/cta-button', null, [
+                'button_class' => 'site-header__button'
+            ])
             ?>
         </nav>
 
