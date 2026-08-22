@@ -144,6 +144,10 @@ class Asset extends AbstractInheritingThemeFile
 
             $template = basename(get_page_template());
 
+            if ($template === '') {
+                $files[] = 'page-default';
+            }
+
             if ($template) {
                 $files[] = str_replace('.php', '', $template);
             }
