@@ -91,7 +91,7 @@
                     <p>Just a few miles away is the bustling town of Windsor, which is famous for its magnificent castle, which has been the residence of the British Royal Family for over 900 years. Visitors can take a tour of the castle and explore its fascinating history or simply wander through the charming streets of the town, which are lined with boutique shops, cafes, and restaurants.</p>
                 </div>
                 <div class="text-with-image__image">
-                    <iframe width="600" height="450" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJI95iYFh7dkgRPMD4toK8e0o&key=AIzaSyDOepOVzqiUNR9xcIQBjtxLTPmhCqAEv-0"></iframe>
+                    <iframe width="600" height="450" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJI95iYFh7dkgRPMD4toK8e0o&key=<?= esc_attr($_ENV['GOOGLE_API_KEY'] ?? '') ?>"></iframe>
                 </div>
             </section>
 
